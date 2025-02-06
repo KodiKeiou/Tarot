@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c35;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos del contenedor principal */
+.cuerpo {
+    background-color: #3e4451;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    min-height: 400px;
+}
+
+/* Estilos del botón */
+.boton {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.accion, .reiniciar {
+    background-color: #ffcc00;
+    color: #282c35;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.accion:hover, .reiniciar:hover {
+    background-color: #e6b800;
+}
+
+/* Estilos del resultado */
+.resultado {
+    background-color: #505865;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 50px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resultado ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.resultado li {
+    background-color: #606a77;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
