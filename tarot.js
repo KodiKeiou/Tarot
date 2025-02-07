@@ -22,10 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultadoDiv = document.querySelector(".resultado");
     const botonAccion = document.querySelector(".accion");
     const botonReiniciar = document.createElement("button");
-
-    botonReiniciar.textContent = "Reiniciar";
-    botonReiniciar.classList.add("reiniciar");
-    document.querySelector(".boton").appendChild(botonReiniciar);
+    const tuscartas = document.querySelector(".tulista")
 
     function mostrarLista() {
         resultadoDiv.innerHTML = "";
@@ -38,16 +35,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function elegirAleatorio() {
         if (listaElementos.length > 0) {
+            const itemElegido = document.createElement("li");
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "-";
+            botonEliminar.classList.add("eliminar");
+            const contenedor = document.createElement("div");
+            contenedor.classList.add("content");
             const randomIndex = Math.floor(Math.random() * listaElementos.length);
-            const itemElegido = listaElementos[randomIndex];
-            resultadoDiv.innerHTML = `<li>${itemElegido}</li>`;
+            itemElegido.textContent = listaElementos[randomIndex];
+            contenedor.appendChild(itemElegido);
+            contenedor.appendChild(botonEliminar);
+            tuscartas.appendChild(contenedor);
         }
     }
 
-    botonAccion.addEventListener("click", elegirAleatorio);
-    botonReiniciar.addEventListener("click", mostrarLista);
-
+    document.addEventListener("click", function(event) {
+        if (event.target.classList.contains("eliminar")) {
+            const content = event.target.closest(".content"); // Encuentra el contenedor padre
+            if (content) {
+                content.remove(); // Elimina solo ese contenedor
+            }
+        }
+    });
+    
     mostrarLista();
+    botonAccion.addEventListener("click", elegirAleatorio);
+
+   
 });
 
 
