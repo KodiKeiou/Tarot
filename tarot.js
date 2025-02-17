@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         , "Relevo. Cambia todas tus cartas con un jugador o todas las cartas de 2 jugadores rivales"
         , "El Fénix. Si un jugador gana la partida revívelo con 3 cartas nuevas."
         , "El Corazón Roto. Un jugador pierde su próxima carta de tarot jugada."
-        , "Descartes. Fuera de tu turno descarta cualquier carta que no sea figura ignorando todas las normas"];
+        , "Descartes. Fuera de tu turno descarta cualquier carta que no sea figura ignorando todas las normas"
+        , "Poli malo. Inventa una sancion que aplique para el resto de la partida"
+        , "La escalera. Durante un turno solo se puede tirar cartas de un valor mas alto a la que esta (el as la mas alta)"];
     const resultadoDiv = document.querySelector(".resultado");
     const botonAccion = document.querySelector(".accion");
     const botonReiniciar = document.createElement("button");
