@@ -1,16 +1,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+import { getDatabase, ref, set, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyBXqi3MXa8vECYBuFtJCa_A5HDPK3Ud0ns",
-  authDomain: "juego-bba10.firebaseapp.com",
-  databaseURL: "https://juego-bba10-default-rtdb.firebaseio.com",
-  projectId: "juego-bba10",
-  storageBucket: "juego-bba10.firebasestorage.app",
-  messagingSenderId: "818631334442",
-  appId: "1:818631334442:web:5382beb62bf17b8c41c153",
-  measurementId: "G-NJPGKB636F"
+    apiKey: "AIzaSyBXqi3MXa8vECYBuFtJCa_A5HDPK3Ud0ns",
+    authDomain: "juego-bba10.firebaseapp.com",
+    databaseURL: "https://juego-bba10-default-rtdb.firebaseio.com",
+    projectId: "juego-bba10",
+    storageBucket: "juego-bba10.firebasestorage.app",
+    messagingSenderId: "818631334442",
+    appId: "1:818631334442:web:5382beb62bf17b8c41c153",
+    measurementId: "G-NJPGKB636F"
 };
 
 // Inicializa Firebase
@@ -53,6 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    function actualizarPuntuacion(idJugador, puntuacion) {
+        const jugadorRef = ref(database, `jugadores/${idJugador}`); // Antes decía `mao/${idJugador}`
+    
+        update(jugadorRef, {
+            puntuacion: puntuacion
+        }).then(() => {
+            console.log("Puntuación actualizada en Firebase.");
+        }).catch((error) => {
+            console.error("Error al actualizar la puntuación:", error);
+        });
+    }
+
+
     // Función para guardar los datos en Firebase
     function guardarDatos(nombreJugador, puntuacion) {
         const nuevoJugadorRef = push(ref(database, 'jugadores'));
@@ -66,58 +79,54 @@ document.addEventListener("DOMContentLoaded", function () {
     function mostrarJugador(id, nombre, puntuacion) {
         const contenedor = document.createElement("div");
         contenedor.classList.add("jugador");
-
-        // Crear div para el nombre
+    
         const jugador = document.createElement("div");
         jugador.textContent = nombre;
         jugador.classList.add("nombre");
-
-        // Crear div para la puntuación
+    
         const puntuacionDiv = document.createElement("div");
         puntuacionDiv.textContent = puntuacion;
         puntuacionDiv.classList.add("puntos");
-
-        // Crear input y botón para sumar puntos
+    
         const inputSumar = document.createElement("input");
         inputSumar.type = "number";
-
+    
         const botonSumar = document.createElement("button");
         botonSumar.textContent = "+";
-
-        // Evento para sumar puntos y reordenar la lista
+    
         botonSumar.addEventListener("click", function () {
             const puntosAgregar = parseInt(inputSumar.value, 10);
             if (!isNaN(puntosAgregar)) {
-                puntuacionDiv.textContent = parseInt(puntuacionDiv.textContent, 10) + puntosAgregar;
+                let nuevaPuntuacion = parseInt(puntuacionDiv.textContent, 10) + puntosAgregar;
+                
+                puntuacionDiv.textContent = nuevaPuntuacion;
                 inputSumar.value = "";
+    
+                // Pasar el ID real del jugador
+                actualizarPuntuacion(id, nuevaPuntuacion);
                 ordenarClasificacion();
             }
         });
-
-        // Crear el botón para eliminar el jugador
+    
         const botonEliminar = document.createElement("button");
         botonEliminar.textContent = "Eliminar";
         botonEliminar.classList.add("eliminarJ");
-
-        // Evento para eliminar el jugador de Firebase
+    
         botonEliminar.addEventListener("click", function () {
-            eliminarJugador(id); // Eliminar de Firebase
-            contenedor.remove(); // Eliminar de la interfaz
+            eliminarJugador(id);
+            contenedor.remove();
         });
-
-        // Agregar elementos al contenedor del jugador
+    
         contenedor.appendChild(jugador);
         contenedor.appendChild(puntuacionDiv);
         contenedor.appendChild(inputSumar);
         contenedor.appendChild(botonSumar);
         contenedor.appendChild(botonEliminar);
-
-        // Agregar jugador a la clasificación
+    
         clasificacion.appendChild(contenedor);
-
-        // Ordenar la clasificación
         ordenarClasificacion();
     }
+    
 
     // Función para eliminar un jugador de Firebase
     function eliminarJugador(id) {
