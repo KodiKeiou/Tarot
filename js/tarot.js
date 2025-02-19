@@ -129,6 +129,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Recuperar cartas de Firebase y mostrarlas bajo la referencia "mao"
     onValue(ref(database, "mao"), (snapshot) => {
         const jugadores = snapshot.val();
+        
+        // Limpiar los contenedores antes de agregar nuevas cartas
+        for (let jugador in contenedores) {
+            contenedores[jugador].innerHTML = '';  // Limpiar contenido anterior
+        }
+
+        // Agregar las cartas para cada jugador
         for (let jugador in jugadores) {
             jugadores[jugador].forEach(carta => {
                 const contenedor = document.createElement("div");
