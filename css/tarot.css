@@ -1,0 +1,140 @@
+/* Estilos generales */
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    background-color: #282c35;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos del contenedor principal */
+.cuerpo {
+    background-color: #3e4451;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    min-height: 400px;
+}
+
+/* Estilos del botón */
+.boton {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.accion {
+    background-color: #ffcc00;
+    color: #282c35;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.accion:hover,
+.eliminar:hover {
+    background-color: #e6b800;
+}
+
+/* Estilos del resultado */
+.resultado {
+    background-color: #505865;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 50px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.lista {
+    background-color: #505865;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 50px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resultado ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+
+.resultado li {
+    background-color: #606a77;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.content li {
+    background-color: #606a77;
+    list-style: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.eliminar {
+    background-color: #ffcc00;
+    color: #282c35;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 10%;
+    height: 40px;
+    margin-left: 10px;
+}
+
+
+.jugar{
+    background-color: #ffcc00;
+    color: #282c35;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

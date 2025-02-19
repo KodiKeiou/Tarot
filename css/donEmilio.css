@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0;
+    background-color: #282c35;
+    font-family: Arial, sans-serif;
+}
+
+
+.cuerpo4 {
+    background-color: #3e4451;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+
+
+.sumar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre filas */
+    width: 300px; /* Ajusta el ancho según necesites */
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.fila input{
+    border: none; /* Quitar bordes */
+    outline: none; /* Evitar borde azul al hacer clic */
+    width: 180px; /* Ajusta el ancho según necesites */
+    height: 20px; /* Altura del input */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Hace que parezca un botón */
+}
+
+.fila p {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+
+#anadir {
+    background-color: #ffcc00;
+    color: #282c35;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 30%;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.clasificacion {
+    min-width: 300px;
+    margin-top: 30px;
+}
+
+.jugador {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nombre{
+    width: 40%;
+    text-align: left;
+}
+.puntos{
+    width: 30%;
+    text-align: left;
+}
+
+.jugador input {
+    border: none; /* Quitar bordes */
+    outline: none; /* Evitar borde azul al hacer clic */
+    width: 50px; /* Ajusta el ancho según necesites */
+    height: 20px; /* Altura del input */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Hace que parezca un botón */
+    margin-right: 10px;
+}
+
+.jugador button {
+    background-color: #ffcc00;
+    border: none; /* Quitar bordes */
+    outline: none; /* Evitar borde azul al hacer clic */
+    width: 40px; /* Ajusta el ancho según necesites */
+    height: auto; /* Altura del input */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Hace que parezca un botón */
+}

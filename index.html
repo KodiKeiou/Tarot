@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tarot.css">
-    <script src="tarot.js"></script>
+    <link rel="stylesheet" href="css/tarot.css">
+    <link rel="stylesheet" href="css/moneda.css">
+    <link rel="stylesheet" href="css/dado.css">
+    <script src="js/tarot.js"></script>
+    <script src="js/dado.js"></script>
+    <script src="js/moneda.js"></script>
+    <script src="js/donEmilio.js"></script>
     <title>Document</title>
 </head>
 
@@ -47,8 +52,8 @@
     <div class="cuerpo3">
         <div class="container" onclick="flipCoin()">
             <div class="coin" id="coin">
-                <div class="side heads"></div>
-                <div class="side tails"></div>
+                <div class="side heads"><img src="img/cara.png" alt=""></div>
+                <div class="side tails"><img src="img/cruz.png" alt=""></div>
             </div>
         </div>
     </div>
@@ -56,22 +61,8 @@
     <div class="encabezado" style="margin-top: 80px;">
         <h1 style="color: white; font-size: 50px;">𝓓𝓸𝓷 𝓔𝓶𝓲𝓵𝓲𝓸</h1>
     </div>
-
-    <div class="cuerpo4">
-        <div class="sumar">
-            <div class="fila">
-                <p class="item">Nombre</p>
-                <input type="text" class="cuadroT item">
-            </div>
-            <div class="fila">
-                <p class="item">Puntuación</p>
-                <input type="text" class="cuadroP item">
-            </div>
-            <button id="anadir">Nuevo</button>
-        </div>
-        <div class="clasificacion"></div>
-    </div>
-
+        <button class="jugar" onclick="location.href='donEmilio.html'">Jugar</button>
+        
 </body>
 
 </html>
