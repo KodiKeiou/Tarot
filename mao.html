@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="css/tarot.css">
     <link rel="stylesheet" href="css/moneda.css">
     <link rel="stylesheet" href="css/dado.css">
-    <script src="js/tarot.js"></script>
+    <link rel="stylesheet" href="css/ruleta.css">
+    <script type="module" src="js/tarot.js"></script>
     <script src="js/dado.js"></script>
     <script src="js/moneda.js"></script>
-    <script src="js/donEmilio.js"></script>
-    <title>Document</title>
+    <script src="js/ruleta.js"></script>
+    <title>Mao</title>
 </head>
 
 <body>
@@ -19,18 +20,59 @@
         <h1 style="color: white; font-size: 70px;">𝓣𝓪𝓻𝓸𝓽</h1>
     </div>
     <div class="cuerpo">
-        <div class="boton">
-            <button class="accion">Tirar</button>
-        </div>
         <div class="resultado"></div>
         <div class="lista">
+            <div class="boton">
+                <button class="accion">Dani</button>
+            </div>
+            <div class="cartasdani"></div>
+        </div>
+        <div class="lista">
+            <div class="boton">
+                <button class="accion">Carlos</button>
+            </div>
+            <div class="cartascarlos"></div>
+        </div>
+        <div class="lista">
+            <div class="boton">
+                <button class="accion">Jose</button>
+            </div>
+            <div class="cartasjose"></div>
+        </div>
+        <div class="lista">
+            <div class="boton">
+                <button class="accion">Emilio</button>
+            </div>
+            <div class="cartasemilio"></div>
+        </div>
+        <div class="lista">
+            <div class="boton">
+                <button class="accion">CarlosV</button>
+            </div>
+            <div class="cartascarlosv"></div>
+        </div>
+            
+            
+       
+    </div>
+
+    <div class="encabezado">
+        <h1 style="color: white; font-size: 70px;">𝓣𝓪𝓻𝓸𝓽</h1>
+    </div>
+    <div class="cuerpo1">
+        <div class="boton1">
+            <button class="accion1">Tirar</button>
+        </div>
+        <div class="resultado1"></div>
+        <div class="lista1">
             <h2 style="text-align: center;">Tus cartas</h2>
-            <div class="tulista"></div>
+            <div class="tulista1"></div>
         </div>
     </div>
     <div class="encabezado">
         <h1 style="color: white; font-size: 70px;">𝓓𝓪𝓭𝓸</h1>
     </div>
+
     <div class="cuerpo2">
 
         <div class="dice" onclick="rollDice()">
@@ -57,7 +99,7 @@
             </div>
         </div>
     </div>
-    <button class="salir" onclick="location.href='index.html'">Salir</button>
+    <button class="salir" onclick="location.href='index.html'">↩</button>
         
 </body>
 
